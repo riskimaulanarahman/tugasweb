@@ -3,6 +3,8 @@ session_start();
 if($_SESSION['status']!="login"){
 	header("location:login.php");
 }
+$id_user = $_SESSION['id_user'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -147,7 +149,9 @@ if($_SESSION['status']!="login"){
         <!-- Small boxes (Stat box) -->
         <div class="row">
         <div class="col-2">
+          
         <button type="button" class="btn btn-block btn-primary ">Tambah Data</button>
+        
 </div>
           <div class="col-12">
             <div class="card">

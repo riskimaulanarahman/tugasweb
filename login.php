@@ -15,9 +15,20 @@
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition login-page">
+<?php
+ if(isset($_GET['pesan'])){
+  if($_GET['pesan'] == "gagal"){
+   echo "Login gagal! username dan password salah!";
+  }else if($_GET['pesan'] == "logout"){
+   echo "Anda telah berhasil logout";
+  }else if($_GET['pesan'] == "belum_login"){
+   echo "Anda harus login untuk mengakses halaman admin";
+  }
+ }
+ ?>
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>LOGIN</b></a>
+    <a href="#"><b>LOGIN</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
