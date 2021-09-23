@@ -95,8 +95,19 @@ $id_user = $_SESSION['id_user'];
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+           
             <ul class="nav nav-treeview">
+            <?php
+            if ($_SESSION['level']="masyarakat"){
+            ?>
               <li class="nav-item">
+                <a href="./index.php" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Pengaduan</p>
+                </a>
+              </li>
+              <?php }else{?>
+                <li class="nav-item">
                 <a href="./index.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Pengaduan</p>
@@ -113,7 +124,8 @@ $id_user = $_SESSION['id_user'];
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Petugas</p>
                 </a>
-              <li class="nav-item">
+              <li class="nav-item"> 
+                <?php } ?>
                 <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Logout </p>
