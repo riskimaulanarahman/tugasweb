@@ -3,7 +3,8 @@ session_start();
 if($_SESSION['status']!="login"){
 	header("location:login.php");
 }
-$id_user = $_SESSION['id_user'];
+$username = $_SESSION['username'];
+$level = $_SESSION['level'];
 
 ?>
 <!DOCTYPE html>
@@ -76,7 +77,7 @@ $id_user = $_SESSION['id_user'];
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"> <?php echo $username; ?> </a>
         </div>
       </div>
 
@@ -98,7 +99,7 @@ $id_user = $_SESSION['id_user'];
            
             <ul class="nav nav-treeview">
             <?php
-            if ($_SESSION['level']="masyarakat"){
+            if ($_SESSION['level']=="masyarakat"){
             ?>
               <li class="nav-item">
                 <a href="./index.php" class="nav-link active">
@@ -119,13 +120,10 @@ $id_user = $_SESSION['id_user'];
                   <p>Data Masyarakat</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./petugas.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Data Petugas</p>
-                </a>
-              <li class="nav-item"> 
+              
                 <?php } ?>
+              <li class="nav-item"> 
+                
                 <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Logout </p>
