@@ -3,7 +3,7 @@ session_start();
 if($_SESSION['status']!="login"){
 	header("location:login.php");
 }
-$id_user = $_SESSION['id_user'];
+$username = $_SESSION['username'];
 
 ?>
 <!DOCTYPE html>
@@ -76,7 +76,7 @@ $id_user = $_SESSION['id_user'];
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"> <?php echo $username; ?> </a>
         </div>
       </div>
 
